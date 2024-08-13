@@ -5,56 +5,28 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
+import lombok.Getter;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 
 
-
-@Data
 @Entity
+@Data
 @Table(name = "car")
 public class Car {
 	@NotNull
 	@Id
 	@GeneratedValue
 	private int id;
-
-    private String make;
-
-    private String model;
+	private String make;
+	private String model;
 	public int getId() {
 		return id;
 	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	public String getMake() {
-		return make;
-	}
-	public void setMake(String make) {
-		this.make = make;
-	}
-	public String getModel() {
-		return model;
-	}
-	public void setModel(String model) {
-		this.model = model;
-	}
-	public Car(int id, String make, String model) {
 	
-		this.id = id;
-		this.make = make;
-		this.model = model;
-	}
 	public Car() {
 	
 	}
-	@Override
-	public String toString() {
-		return "Car [id=" + id + ", make=" + make + ", model=" + model + "]";
-	}
-
-	
-	
 }
